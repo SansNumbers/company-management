@@ -1,0 +1,11 @@
+.idea
+.env
+db_volume
+*.log
+*.pot
+*.pyc
+*/*/*/__pycache__/
+*/*/__pycache__/
+*/__pycache__/
+celerybeat-schedule
+/excelfile.xlsx

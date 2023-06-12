@@ -1,0 +1,22 @@
+{% extends 'poll/base.html' %}
+
+{% block content %}
+
+    {% if form.errors %}
+          <div class="alert alert-danger" role="alert">
+              <p>There was an error.</p>
+          </div>
+    {% endif %}
+
+    <div class="shadow p-4 mb-5 bg-body rounded">
+        <h1>Register</h1>
+        <br/>
+            <form action="{% url 'member:register' %}" method=POST>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <br/>
+              <button type="submit" class="btn btn-secondary">Submit</button>
+            </form>
+        <br/>
+    </div>
+{% endblock %}
