@@ -38,6 +38,8 @@ EXTERNAL_APPS = [
     'rest_framework.authtoken',
     'django_filters',
     'channels',
+    'corsheaders',
+    'drf_yasg',
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + CUSTOM_APPS + EXTERNAL_APPS
@@ -50,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
@@ -168,3 +171,5 @@ CELERY_BEAT_SCHEDULE = {
         'schedule': crontab(day_of_week='friday', hour='20')
     },
 }
+
+CORS_ALLOW_ALL_ORIGINS = True
